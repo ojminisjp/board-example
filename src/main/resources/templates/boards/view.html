@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<meta charset="UTF-8">
+<title>Title</title>
+<body>
+<div class="container">
+  <p>番号 : [[${contentView.boardId}]]</p>
+  <p>タイトル : [[${contentView.title}]]</p>
+  <p>作成者 : [[${contentView.name}]]</p>
+  内容 :
+  <div id="content">
+    <textarea readonly="readonly"
+              class="form-control"
+              th:text="${contentView.content}">
+    </textarea>
+  </div>
+  <p>ビュー : [[${contentView.read}]]</p>
+
+  <form th:action="@{update}" method="get">
+    <input type="hidden" name="boardId" th:value="${contentView.boardId}">
+    <button type="submit">修正</button>
+  </form>
+
+  <form th:action="@{delete}" method="get">
+    <input type="hidden" name="boardId" th:value="${contentView.boardId}">
+    <button type="submit">削除</button>
+  </form>
+
+  <form th:action="@{main}" method="get">
+    <button type="submit">戻る</button>
+  </form>
+</div>
+</body>
+</html>

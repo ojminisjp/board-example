@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <form id="form" th:action="@{update}" method="post">
+    <p>番号 : [[${update.boardId}]]</p>
+    タイトル :
+    <div id="title">
+      <textarea class="form-control" name='title'>[[${update.title}]]</textarea>
+    </div>
+    <p>作成者 : [[${update.name}]]</p>
+    内容 :
+    <div id="content">
+      <textarea class="form-control" name='content'>[[${update.content}]]</textarea>
+    </div>
+    <input type="hidden" name="boardId" th:value="${update.boardId}">
+    <button type="submit">保存</button>
+  </form>
+</div>
+</body>
+</html>

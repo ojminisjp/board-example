@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <form th:action="@{upload}" method="post">
+    <table>
+      <tr>
+        <td>作成者</td>
+        <td><input type="text" class="form-control" name="name"></td>
+      </tr>
+      <tr>
+        <td>タイトル</td>
+        <td><input type="text" class="form-control" name="title"></td>
+      </tr>
+      <tr>
+        <td>内容</td>
+        <td><textarea class="form-control" name="content"></textarea></td>
+      </tr>
+    </table>
+    <button type="submit">登録</button>
+  </form>
+  <form th:action="@{main}" method="get">
+    <button type="submit">戻る</button>
+  </form>
+</div>
+</body>
+</html>
